@@ -1,0 +1,101 @@
+.ScrollButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.ScrollButton:hover .to-up {
+    animation: up 1s normal;
+}
+
+.ScrollButton:hover .to-down {
+    animation: down 1s normal;
+}
+
+.ScrollButton-to-up {
+    right: 30px;
+    bottom: 30px;
+    
+}
+
+.ScrollButton-to-down {
+    right: 90px;
+    bottom: 30px;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(5px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 700px) {
+    .ScrollButton-to-down {
+        left: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .ScrollButton {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ScrollButton-to-up {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .ScrollButton-to-down {
+        left: 10px;
+        bottom: 10px;
+    }
+}

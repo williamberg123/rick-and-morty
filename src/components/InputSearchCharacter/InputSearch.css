@@ -1,0 +1,38 @@
+.InputSearch {
+    width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: bold;
+    margin: 0 10px 0 auto;
+    color: rgb(163, 163, 163);
+}
+
+.InputSearch input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.InputSearch span {
+    color: rgb(146, 146, 146);
+    margin-left: 3px;
+}
+
+.InputSearch-results {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .InputSearch {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .InputSearch {
+        width: 100%;
+    }
+}

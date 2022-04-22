@@ -1,0 +1,11 @@
+.LoadingInfo {
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.LoadingInfo span {
+    color: red;
+}

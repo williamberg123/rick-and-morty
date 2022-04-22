@@ -1,0 +1,48 @@
+.LoadMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.LoadMore:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.plus-icon {
+    margin: 0 0 5px 5px;
+}
+
+.LoadMore:hover .plus-icon{
+    animation: load-more 0.5s normal;
+}
+
+@keyframes load-more {
+    0%{
+        transform: rotate(0);
+    }
+    
+    50%{
+        transform: rotate(180deg);
+    }
+
+    100%{
+        transform: rotate(0);
+    }
+}
+
+@media (max-width: 450px) {
+    .LoadMore {
+        width: 100%;
+    }
+}

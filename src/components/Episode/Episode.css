@@ -1,0 +1,19 @@
+.Episode {
+    background-color: rgb(238, 132, 12);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.Episode-name {
+    color: white;
+}
+
+.Episode-episode {
+    color: rgb(255, 0, 0);
+}
+
+.Episode-air-date {
+    color: rgb(255, 255, 255);
+}

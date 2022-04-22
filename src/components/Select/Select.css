@@ -1,0 +1,18 @@
+.Select {
+    justify-self: start;
+    width: 300px;
+    height: 40px;
+    margin: 10px auto 20px 10px;
+}
+
+@media (max-width: 700px) {
+    .Select {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .Select {
+        width: 100%;
+    }
+}
