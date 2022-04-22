@@ -5,7 +5,7 @@ import './Header.css';
 export default function Header() {
     return (
         <header className="Header">
-            <span>Rick</span>
+            <span>Rick & Morty</span>
         </header>
     );
 }
