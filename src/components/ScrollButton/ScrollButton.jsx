@@ -31,7 +31,7 @@ export default function ScrollButton({ direction }){
             direction === 'to-up'
                 ? <FaArrowUp className={direction} />
                 : <FaArrowDown className={direction} />
-            }
+        }
         </button>
     );
 }

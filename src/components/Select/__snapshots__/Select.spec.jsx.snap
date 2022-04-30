@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> should match snapshot 1`] = `
+<select
+  class="Select"
+>
+  <option
+    value="personagens"
+  >
+    PERSONAGENS
+  </option>
+  <option
+    value="episodios"
+  >
+    EPISÓDIOS
+  </option>
+  <option
+    value="ambientes"
+  >
+    AMBIENTES
+  </option>
+</select>
+`;

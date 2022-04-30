@@ -16,15 +16,6 @@
     margin-bottom: 5px;
 }
 
-.InputSearch span {
-    color: rgb(146, 146, 146);
-    margin-left: 3px;
-}
-
-.InputSearch-results {
-    display: none;
-}
-
 @media (max-width: 700px) {
     .InputSearch {
         margin: 10px 0;

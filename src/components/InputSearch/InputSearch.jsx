@@ -20,5 +20,5 @@ export default function InputSearch({ funcSearch, searchedValue }){
 
 InputSearch.propTypes = {
     funcSearch: PropTypes.func.isRequired,
-    searchedValue: PropTypes.string.isRequired
+    searchedValue: PropTypes.string
 };

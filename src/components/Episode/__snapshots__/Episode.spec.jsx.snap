@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Episode /> should match snapshot 1`] = `
+<div
+  class="Episode"
+>
+  <div
+    class="Episode-name"
+  >
+    #
+    1
+     - 
+    Pilots
+  </div>
+  <div
+    class="Episode-episode"
+  >
+    Temp: 01, Ep: 01
+  </div>
+  <div
+    class="Episode-air-date"
+  >
+    Data de exibição: 
+    December 12, 21
+  </div>
+</div>
+`;

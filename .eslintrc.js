@@ -49,6 +49,7 @@ module.exports = {
       'consistent-return': 'off',
       'non-zero': 'off',
       'no-unused-expressions': 'off',
-      'array-bracket-spacing': 'off'
+      'array-bracket-spacing': 'off',
+      'react/require-default-props': 'off'
   },
 };

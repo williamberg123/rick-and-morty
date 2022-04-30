@@ -12,7 +12,11 @@ export default function LoadMoreButton({ funcLoadMore, isDisabled }){
     );
 }
 
+LoadMoreButton.defaultProps = {
+    isDisabled: false
+};
+
 LoadMoreButton.propTypes = {
     funcLoadMore: PropTypes.func.isRequired,
-    isDisabled: PropTypes.bool.isRequired
+    isDisabled: PropTypes.bool
 };

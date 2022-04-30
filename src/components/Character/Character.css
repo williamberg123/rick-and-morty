@@ -7,6 +7,7 @@
     box-shadow: 3px 3px 10px rgb(138, 138, 138);
     transition: 0.3s;
     font-weight: bold;
+    aspect-ratio: 1/1;
 }
 
 .Character:hover {

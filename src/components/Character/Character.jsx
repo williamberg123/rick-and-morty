@@ -5,7 +5,7 @@ import './Character.css';
 
 export default function Character({ name, species, imageUrl }){
     return(
-        <div className="Character">
+        <div className="Character" data-testid="CharacterDiv">
             <img src={imageUrl} alt={name} />
             <div className="shadow"></div>
             <div className="Character-info">

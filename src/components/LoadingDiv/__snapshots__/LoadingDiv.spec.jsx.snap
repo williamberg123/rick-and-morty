@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingDiv /> should match snapshot 1`] = `
+<div
+  class="LoadingDiv"
+  data-testid="LoadingDiv"
+>
+  <div
+    class="dots"
+  />
+  <div
+    class="dots"
+  />
+  <div
+    class="dots"
+  />
+  <div
+    class="dots"
+  />
+  <div
+    class="dots"
+  />
+</div>
+`;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 
 import Header from '../../components/Header/Header';
-import Container from '../../components/DivContainer/Container';
+import Container from '../../containers/MainContainer/Container';
 import LoadMoreButton from '../../components/LoadMoreButton/LoadMoreButton';
 import ScrollButton from '../../components/ScrollButton/ScrollButton';
 
@@ -41,7 +41,16 @@ export default function App(){
         const { selectedIndex } = e.target;
         const selectedOption = renderOptions[selectedIndex];
 
-        const allData = await getAllData(selectedOption.name, selectedOption.maxPage);
+        let allData = null;
+
+        const localStorageData = JSON.parse(localStorage.getItem(`${selectedOption.name}s`));
+
+        if(localStorageData){
+            allData = localStorageData;
+        } else {
+            allData = await getAllData(selectedOption.name, selectedOption.maxPage);
+            localStorage.setItem(`${selectedOption.name}s`, JSON.stringify(allData));
+        }
 
         setAllReturnedData(allData);
         setRenderingData(allData.slice(0, 20));
@@ -52,7 +61,16 @@ export default function App(){
     const firstRendering = async () => {
         const { name, maxPage } = selectedRenderingOption;
 
-        const allData = await getAllData(name, maxPage);
+        let allData = null;
+
+        const localStorageData = JSON.parse(localStorage.getItem(`${name}s`));
+
+        if(localStorageData){
+            allData = localStorageData;
+        } else {
+            allData = await getAllData(name, maxPage);
+            localStorage.setItem(`${name}s`, JSON.stringify(allData));
+        }
 
         setAllReturnedData(allData);
         setRenderingData(allData.slice(lastPageLoaded * 20, (lastPageLoaded * 20) + 20));
@@ -75,6 +93,7 @@ export default function App(){
     return (
         <div className="App">
             <Header />
+
             <Container
                 optionToRender={selectedRenderingOption.name}
                 allReturnedData={allReturnedData}
@@ -84,7 +103,11 @@ export default function App(){
                 funcSearch={(e) => handleSearch(e)}
                 searchedValue={searchedValue}
             />
-            <LoadingDiv />
+
+            {!allReturnedData.length && (
+                <LoadingDiv />
+            )}
+
             {(!searchedValue && !!allReturnedData.length) && (
                 <LoadMoreButton
                     funcLoadMore={loadMore}

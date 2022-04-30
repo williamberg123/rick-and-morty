@@ -4,7 +4,7 @@ import './LoadingDiv.css';
 
 export default function LoadingDiv(){
     return (
-        <div className="LoadingDiv">
+        <div className="LoadingDiv" data-testid="LoadingDiv">
             <div className="dots"></div>
             <div className="dots"></div>
             <div className="dots"></div>

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingInfo /> should match snapshot 1`] = `
+<div
+  class="LoadingInfo"
+>
+  <div
+    class="Loading-total"
+  >
+    Total: 
+    <span>
+      826
+    </span>
+  </div>
+  <div
+    class="Loading-loaded-count"
+  >
+    Carregado até o momento: 
+    <span>
+      20
+    </span>
+  </div>
+</div>
+`;

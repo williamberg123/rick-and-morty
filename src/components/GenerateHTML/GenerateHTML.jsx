@@ -6,14 +6,14 @@ import Character from '../Character/Character';
 import Episode from '../Episode/Episode';
 import Location from '../Location/Location';
 
-export default function GenerateHTML({optionToRender, dataToShow, searchedValue}){
+export default function GenerateHTML({ optionToRender, dataToShow, searchedValue }){
     let dataToRender = null;
 
     switch (optionToRender) {
         case 'character':
             dataToRender = dataToShow.map(({id, name, species, image}) => {
-                return searchedValue.length
-                ? !!name.indexOf(searchedValue) && (
+                return searchedValue
+                ? name.includes(searchedValue) && (
                     <Character
                         id={id}
                         name={name}
@@ -24,11 +24,11 @@ export default function GenerateHTML({optionToRender, dataToShow, searchedValue}
                 )
                 : (
                     <Character
-                            id={id}
-                            name={name}
-                            species={species}
-                            key={id}
-                            imageUrl={image}
+                        id={id}
+                        name={name}
+                        species={species}
+                        key={id}
+                        imageUrl={image}
                     />
                 );
             });
@@ -36,8 +36,8 @@ export default function GenerateHTML({optionToRender, dataToShow, searchedValue}
 
         case 'episode':
             dataToRender = dataToShow.map(({id, name, air_date, episode}) => {
-                return searchedValue.length
-                ? !!name.indexOf(searchedValue) && (
+                return searchedValue
+                ? name.includes(searchedValue) && (
                     <Episode
                         id={id}
                         name={name}
@@ -60,8 +60,8 @@ export default function GenerateHTML({optionToRender, dataToShow, searchedValue}
 
         case 'location':
             dataToRender = dataToShow.map(({id, name, type, dimension}) => {
-                return searchedValue.length
-                ? !!name.indexOf(searchedValue) && (
+                return searchedValue
+                ? name.includes(searchedValue) && (
                     <Location
                         id={id}
                         name={name}
@@ -97,5 +97,5 @@ export default function GenerateHTML({optionToRender, dataToShow, searchedValue}
 GenerateHTML.propTypes = {
     optionToRender: PropTypes.string.isRequired,
     dataToShow: PropTypes.instanceOf(Array).isRequired,
-    searchedValue: PropTypes.string.isRequired
+    searchedValue: PropTypes.string
 };

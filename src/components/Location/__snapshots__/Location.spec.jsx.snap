@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Location /> should match snapshot 1`] = `
+<div
+  class="Location"
+>
+  <div
+    class="Location-name"
+  >
+    Earth
+  </div>
+  <div
+    class="Location-hidden-info"
+  >
+    <div
+      class="Location-type"
+    >
+      Tipo:
+      <span>
+        planet
+      </span>
+    </div>
+    <div
+      class="Location-dimension"
+    >
+      Dimensão:
+      <span>
+        C-137
+      </span>
+    </div>
+  </div>
+</div>
+`;
