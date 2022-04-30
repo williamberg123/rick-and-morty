@@ -38,6 +38,8 @@ export default function App(){
     };
 
     const handleChangeOption = async (e) => {
+        setAllReturnedData([]);
+
         const { selectedIndex } = e.target;
         const selectedOption = renderOptions[selectedIndex];
 
