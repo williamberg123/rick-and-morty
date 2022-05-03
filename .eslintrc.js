@@ -50,6 +50,9 @@ module.exports = {
       'non-zero': 'off',
       'no-unused-expressions': 'off',
       'array-bracket-spacing': 'off',
-      'react/require-default-props': 'off'
+      'react/require-default-props': 'off',
+      'jsx-a11y/click-events-have-key-events': 'off',
+      'jsx-a11y/no-static-element-interactions': 'off',
+      'function-paren-newline': 'off'
   },
 };

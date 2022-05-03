@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import PropTypes from 'prop-types';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 import './ScrollButton.css';
 
-export default function ScrollButton({ direction }){
+function ScrollButton({ direction }){
     const scrollPageToUp = () => window.scrollTo(0, 0);
     const scrollPageToDown = () => {
         const bodyHeight = document.body.scrollHeight;
@@ -39,3 +39,5 @@ export default function ScrollButton({ direction }){
 ScrollButton.propTypes = {
     direction: PropTypes.string.isRequired
 };
+
+export default memo(ScrollButton);

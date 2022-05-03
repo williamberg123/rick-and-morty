@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import './Character.css';
 
-export default function Character({ name, species, imageUrl }){
+function Character({ name, species, imageUrl }){
+    const handleClick = () => {
+        console.log('DIV CLICADA');
+    };
+
     return(
-        <div className="Character" data-testid="CharacterDiv">
+        <div onClick={handleClick} className="Character" data-testid="CharacterDiv">
             <img src={imageUrl} alt={name} />
             <div className="shadow"></div>
             <div className="Character-info">
@@ -21,3 +25,5 @@ Character.propTypes = {
     species: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired
 };
+
+export default memo(Character);

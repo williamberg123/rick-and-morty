@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import './Select.css';
 
-export default function Select({ funcChange }){
+function Select({ funcChange }){
     return (
         <select className="Select" onChange={funcChange}>
             <option value="personagens">PERSONAGENS</option>
@@ -16,3 +16,5 @@ export default function Select({ funcChange }){
 Select.propTypes = {
     funcChange: PropTypes.func.isRequired
 };
+
+export default memo(Select);

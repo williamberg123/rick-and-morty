@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import PropTypes from 'prop-types';
 
 import './InputSearch.css';
 
-export default function InputSearch({ funcSearch, searchedValue }){
+function InputSearch({ funcSearch, searchedValue }){
     return (
         <div className="InputSearch">
             <input
@@ -22,3 +22,5 @@ InputSearch.propTypes = {
     funcSearch: PropTypes.func.isRequired,
     searchedValue: PropTypes.string
 };
+
+export default memo(InputSearch);

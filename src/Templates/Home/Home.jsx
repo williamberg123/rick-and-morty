@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Home.css';
 
 import Header from '../../components/Header/Header';
@@ -9,22 +9,25 @@ import ScrollButton from '../../components/ScrollButton/ScrollButton';
 import getAllData from '../../utils/getAllData';
 import LoadingDiv from '../../components/LoadingDiv/LoadingDiv';
 
-export default function App(){
-    const [ allReturnedData, setAllReturnedData ] = useState([]);
-    const [ renderingData, setRenderingData ] = useState([]);
-    const [ lastPageLoaded, setLastPageLoaded ] = useState(0);
-    const [ selectedRenderingOption, setSelectedRenderingOption ] = useState({name: 'character', maxPage: 42, totalItemsToRender: 826});
-    const [ searchedValue, setSearchedValue ] = useState('');
-    const [ renderOptions ] = useState([
-        {name: 'character', maxPage: 42, totalItemsToRender: 826},
-        {name: 'episode', maxPage: 3, totalItemsToRender: 51},
-        {name: 'location', maxPage: 7, totalItemsToRender: 126}
+export default function App() {
+    const [allReturnedData, setAllReturnedData] = useState([]);
+    const [renderingData, setRenderingData] = useState([]);
+    const [lastPageLoaded, setLastPageLoaded] = useState(0);
+    const [selectedRenderingOption, setSelectedRenderingOption] = useState({ name: 'character', maxPage: 42, totalItemsToRender: 826 });
+    const [searchedValue, setSearchedValue] = useState('');
+    const [renderOptions] = useState([
+        { name: 'character', maxPage: 42, totalItemsToRender: 826 },
+        { name: 'episode', maxPage: 3, totalItemsToRender: 51 },
+        { name: 'location', maxPage: 7, totalItemsToRender: 126 }
     ]);
 
-    const handleSearch = (e) => {
-        const inputValue = e.target.value.toLowerCase();
-        setSearchedValue(inputValue);
-    };
+    const handleSearch = useCallback(
+        (e) => {
+            const inputValue = e.target.value.toLowerCase();
+            setSearchedValue(() => inputValue);
+        },
+        []
+    );
 
     const loadMore = () => {
         const initialIndex = lastPageLoaded * 20;
@@ -34,11 +37,11 @@ export default function App(){
         renderingData.push(...newDataToAdd);
 
         setRenderingData(renderingData);
-        setLastPageLoaded(lastPageLoaded + 1);
+        setLastPageLoaded((last) => last + 1);
     };
 
     const handleChangeOption = async (e) => {
-        setAllReturnedData([]);
+        setSearchedValue('');
 
         const { selectedIndex } = e.target;
         const selectedOption = renderOptions[selectedIndex];
@@ -47,7 +50,7 @@ export default function App(){
 
         const localStorageData = JSON.parse(localStorage.getItem(`${selectedOption.name}s`));
 
-        if(localStorageData){
+        if (localStorageData) {
             allData = localStorageData;
         } else {
             allData = await getAllData(selectedOption.name, selectedOption.maxPage);
@@ -56,18 +59,18 @@ export default function App(){
 
         setAllReturnedData(allData);
         setRenderingData(allData.slice(0, 20));
-        setSelectedRenderingOption({...selectedOption});
+        setSelectedRenderingOption({ ...selectedOption });
         setLastPageLoaded(1);
     };
 
     const firstRendering = async () => {
         const { name, maxPage } = selectedRenderingOption;
 
-        let allData = null;
+        let allData = [];
 
         const localStorageData = JSON.parse(localStorage.getItem(`${name}s`));
 
-        if(localStorageData){
+        if (localStorageData) {
             allData = localStorageData;
         } else {
             allData = await getAllData(name, maxPage);
@@ -82,16 +85,16 @@ export default function App(){
     useEffect(() => {
         firstRendering();
     }, []);
-
-    const isDisabled = renderingData.length >= allReturnedData.length;
-
+    
     const filteredData = searchedValue.length
-        ? allReturnedData.filter(item => {
+    ? allReturnedData.filter(item => {
             item.name = item.name.toLowerCase();
             return item.name.indexOf(searchedValue) !== -1;
         })
         : renderingData;
-        
+
+    const isDisabled = renderingData.length >= allReturnedData.length;
+
     return (
         <div className="App">
             <Header />
@@ -102,12 +105,14 @@ export default function App(){
                 dataToShow={filteredData}
                 totalToLoad={selectedRenderingOption.totalItemsToRender}
                 funcChange={handleChangeOption}
-                funcSearch={(e) => handleSearch(e)}
+                funcSearch={handleSearch}
                 searchedValue={searchedValue}
             />
 
             {!allReturnedData.length && (
-                <LoadingDiv />
+                <div>
+                    <LoadingDiv />
+                </div>
             )}
 
             {(!searchedValue && !!allReturnedData.length) && (
@@ -116,7 +121,7 @@ export default function App(){
                     isDisabled={isDisabled}
                 />
             )}
-            
+
             <ScrollButton direction="to-down" />
             <ScrollButton direction="to-up" />
         </div>

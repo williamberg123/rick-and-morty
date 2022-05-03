@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import PropTypes from 'prop-types';
 
 import './Location.css';
 
-export default function Location({ name, type, dimension }){
+function Location({ name, type, dimension }){
     return (
         <div className="Location">
             <div className="Location-name">{name}</div>
@@ -36,3 +36,5 @@ Location.propTypes = {
     type: PropTypes.string.isRequired,
     dimension: PropTypes.string.isRequired
 };
+
+export default memo(Location);

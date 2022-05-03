@@ -7,7 +7,7 @@ import DataContainer from '../DataContainer/DataContainer';
 
 import './Container.css';
 
-export default function Container({ optionToRender, dataToShow, totalToLoad, funcChange, funcSearch, searchedValue }){
+export default function Container({optionToRender, dataToShow, totalToLoad, funcChange, funcSearch, searchedValue }){
     return (
         <div className="Container">
             <InfoContainer
