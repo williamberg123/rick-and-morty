@@ -10,9 +10,7 @@ HTML, CSS, JAVASCRIPT e REACTJS.
 
 **CONHECIMENTO ADQUIRIDO**
 
-Durante o desenvolvimento deste projeto, que ainda continuo implementando melhorias, aprendi e estou aprendendo a melhorar a performance, evitando renderizações desnecessárias e afins. Implementei recentemente testes com a lib nativa do React, onde tenho o projeto salvo em um repositório do GitHub, logo abaixo:
-
-Acesse o repositório: https://github.com/williamberg123/rick-and-morty
+Durante o desenvolvimento deste projeto, que ainda continuo implementando melhorias, aprendi e estou aprendendo a melhorar a performance, evitando renderizações desnecessárias e afins. Implementei também recentemente testes com a lib nativa do React.
 
 **DESAFIOS QUE ENFRENTEI NESTE PROJETO**
 
