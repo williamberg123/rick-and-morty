@@ -14,3 +14,7 @@ html {
 #root {
     max-width: 1500px;
 }
+
+.Home .LoadingDiv {
+    margin-top: 70px;
+}

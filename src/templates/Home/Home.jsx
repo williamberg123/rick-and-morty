@@ -96,7 +96,7 @@ export default function App() {
     const isDisabled = renderingData.length >= allReturnedData.length;
 
     return (
-        <div className="App">
+        <div className="Home">
             <Header />
 
             <Container

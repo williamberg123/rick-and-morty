@@ -53,6 +53,8 @@ module.exports = {
       'react/require-default-props': 'off',
       'jsx-a11y/click-events-have-key-events': 'off',
       'jsx-a11y/no-static-element-interactions': 'off',
-      'function-paren-newline': 'off'
+      'function-paren-newline': 'off',
+      'react/jsx-curly-spacing': 'off',
+      'no-mixed-spaces-and-tabs': 'off'
   },
 };
