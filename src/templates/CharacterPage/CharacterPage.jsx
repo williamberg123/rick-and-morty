@@ -16,29 +16,39 @@ export default function CharacterPage(){
         setCharacterData(data);
     };
 
+    const onLoadPage = () => {
+        const shadowEffect = document.querySelector('#shadow-effect') || undefined;
+        const imageHeight = shadowEffect.nextSibling.clientHeight;
+
+        if(imageHeight <= 420){
+            shadowEffect.style.backgroundImage = `linear-gradient(to bottom, transparent, black ${imageHeight - 20}px)`;
+        }
+    };
+
     useEffect(() => {
         loadCharacterData();
     }, []);
 
-    const { name, species, image, gender, location, origin } = characterData;
+    const { name, species, image, gender, location, origin, episode } = characterData;
 
     return (
-        <div className="CharacterPage">
+        <div onLoad={onLoadPage} className="CharacterPage">
             {!Object.keys(characterData).length
             ? <LoadingDiv />
             : (
                 <>
-                    <div className="shadow-effect"></div>
+                    <div id="shadow-effect" className="shadow-effect"></div>
                     <Image
                     imageUrl={image || ''}
                     altName={name || ''}
                     />
                     <div className="CharacterPage-data">
-                        <h2>{name?.toUpperCase()}</h2>
+                        <h1>{name.toUpperCase()}</h1>
                         <p>Espécie: <span>{species}</span></p>
                         <p>Gênero: <span>{gender}</span></p>
-                        <p>Vive em: <span>{location?.name}</span></p>
-                        <p>Origem: <span>{origin?.name === 'unknown' ? 'Desconhecida' : origin?.name}</span></p>
+                        <p>Vive em: <span>{location.name}</span></p>
+                        <p>Origem: <span>{origin.name === 'unknown' ? 'Desconhecida' : origin.name}</span></p>
+                        <p>Está presente em: <span>{episode.length} episódio{episode.length > 1 ? 's' : ''}</span></p>
                     </div>
                 </>
             )

@@ -1,0 +1,92 @@
+.EpisodePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.EpisodePage-data {
+    width: 100%;
+    text-align: left;
+    padding: 0 20px;
+    margin-bottom: auto;
+}
+
+.EpisodePage-data h1 {
+    color: red;
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+.EpisodePage-data > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.EpisodePage-data h2 {
+    margin: 20px 0;
+    color: rgb(112, 112, 112);
+}
+
+.EpisodePage-data span {
+    color: rgb(238, 132, 12);
+}
+
+.EpisodePage-characters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 20px;    
+    padding-bottom: 20px;
+}
+
+.EpisodePage-characters .Character {
+    box-shadow: none;
+    padding: 0;
+}
+
+.EpisodePage-characters .Character .shadow {
+    width: 100%;
+    height: 100%;
+}
+
+.EpisodePage-data > .LoadinDiv {
+    margin: 50px auto;
+}
+
+@media (max-width: 550px) {
+    .EpisodePage-data h1 {
+        font-size: 1.5rem;
+    }
+    
+    .EpisodePage-data > p {
+        font-size: 0.8rem;
+    }
+    
+    .EpisodePage-data h2 {
+        font-size: 1rem;
+    }
+
+    .EpisodePage-characters {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .EpisodePage-characters .Character-info {
+        left: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .EpisodePage-data {
+        padding: 0 10px;
+    }
+
+    .EpisodePage-characters {
+        grid-gap: 10px;
+        padding-bottom: 10px;
+    }
+}

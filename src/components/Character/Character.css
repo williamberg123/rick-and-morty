@@ -4,6 +4,7 @@
     flex-direction: column;
     padding: 5px;
     border-radius: 10px;
+    background-color: white;
     box-shadow: 3px 3px 10px rgb(138, 138, 138);
     transition: 0.3s;
     font-weight: bold;

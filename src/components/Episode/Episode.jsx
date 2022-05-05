@@ -1,25 +1,23 @@
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
+
+import convert from '../../utils/convertEpisode';
 
 import './Episode.css';
 
 function Episode({ id, name, air_date, episode }){
-    const convert = () => {
-        const temp = episode.slice(1, 3);
-        const ep = episode.slice(4, 6);
-
-        return `Temp: ${temp}, Ep: ${ep}`;
-    };
-
-    const episodeSeason = convert();
+    const episodeSeason = convert(episode);
 
     return (
-        <div className="Episode">
-            <div className="Episode-name">#{id} - {name}</div>
-            <div className="Episode-episode">{episodeSeason}</div>
-            <div className="Episode-air-date">Data de exibição: {air_date}</div>
-        </div>
+        <Link to={`/rick-and-morty/episode/${id}`}>
+            <div className="Episode">
+                <div className="Episode-name">#{id} - {name}</div>
+                <div className="Episode-episode">{episodeSeason}</div>
+                <div className="Episode-air-date">Data de exibição: {air_date}</div>
+            </div>
+        </Link>
     );
 }
 

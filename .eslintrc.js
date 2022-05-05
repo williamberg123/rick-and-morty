@@ -55,6 +55,7 @@ module.exports = {
       'jsx-a11y/no-static-element-interactions': 'off',
       'function-paren-newline': 'off',
       'react/jsx-curly-spacing': 'off',
-      'no-mixed-spaces-and-tabs': 'off'
+      'no-mixed-spaces-and-tabs': 'off',
+      'no-restricted-syntax': 'off'
   },
 };

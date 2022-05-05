@@ -18,3 +18,7 @@ html {
 .Home .LoadingDiv {
     margin-top: 70px;
 }
+
+a {
+    text-decoration: none;
+}
