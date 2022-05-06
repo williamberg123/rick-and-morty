@@ -21,7 +21,7 @@ export default function CharacterPage(){
         const imageHeight = shadowEffect.nextSibling.clientHeight;
 
         if(imageHeight <= 420){
-            shadowEffect.style.backgroundImage = `linear-gradient(to bottom, transparent, black ${imageHeight - 20}px)`;
+            shadowEffect.style.backgroundImage = `linear-gradient(to bottom, transparent, black ${imageHeight}px)`;
         }
     };
 
@@ -46,7 +46,7 @@ export default function CharacterPage(){
                         <h1>{name.toUpperCase()}</h1>
                         <p>Espécie: <span>{species}</span></p>
                         <p>Gênero: <span>{gender}</span></p>
-                        <p>Vive em: <span>{location.name}</span></p>
+                        <p>Vive em: <span>{location.name === 'unknown' ? 'Desconhecido' : location.name}</span></p>
                         <p>Origem: <span>{origin.name === 'unknown' ? 'Desconhecida' : origin.name}</span></p>
                         <p>Está presente em: <span>{episode.length} episódio{episode.length > 1 ? 's' : ''}</span></p>
                     </div>

@@ -11,8 +11,8 @@ html {
     scroll-behavior: smooth;
 }
 
-#root {
-    max-width: 1500px;
+.Home {
+    position: relative;
 }
 
 .Home .LoadingDiv {

@@ -56,6 +56,7 @@ module.exports = {
       'function-paren-newline': 'off',
       'react/jsx-curly-spacing': 'off',
       'no-mixed-spaces-and-tabs': 'off',
-      'no-restricted-syntax': 'off'
+      'no-restricted-syntax': 'off',
+      'no-restricted-globals': 'off'
   },
 };

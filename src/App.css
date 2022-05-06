@@ -1,0 +1,9 @@
+.App {
+    position: relative;
+    margin: 0 auto;
+}
+
+#root {
+    max-width: 1500px;
+    margin: 0 auto;
+}

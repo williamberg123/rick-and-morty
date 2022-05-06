@@ -48,44 +48,51 @@ export default function App() {
 
         let allData = null;
 
-        const localStorageData = JSON.parse(localStorage.getItem(`${selectedOption.name}s`));
-
-        if (localStorageData) {
-            allData = localStorageData;
-        } else {
-            allData = await getAllData(selectedOption.name, selectedOption.maxPage);
-            localStorage.setItem(`${selectedOption.name}s`, JSON.stringify(allData));
+        try {
+            const localStorageData = JSON.parse(localStorage.getItem(`${selectedOption.name}s`));
+    
+            if (localStorageData) {
+                allData = localStorageData;
+            } else {
+                allData = await getAllData(selectedOption.name, selectedOption.maxPage);
+                localStorage.setItem(`${selectedOption.name}s`, JSON.stringify(allData));
+            }
+    
+            setAllReturnedData(allData);
+            setRenderingData(allData.slice(0, 20));
+            setSelectedRenderingOption({ ...selectedOption });
+            setLastPageLoaded(1);
+        } catch (error) {
+            location.href = '/rick-and-morty/error';
         }
-
-        setAllReturnedData(allData);
-        setRenderingData(allData.slice(0, 20));
-        setSelectedRenderingOption({ ...selectedOption });
-        setLastPageLoaded(1);
     };
 
     const firstRendering = async () => {
         const { name, maxPage } = selectedRenderingOption;
-
         let allData = [];
 
-        const localStorageData = JSON.parse(localStorage.getItem(`${name}s`));
-
-        if (localStorageData) {
-            allData = localStorageData;
-        } else {
-            allData = await getAllData(name, maxPage);
-            localStorage.setItem(`${name}s`, JSON.stringify(allData));
+        try {
+            const localStorageData = JSON.parse(localStorage.getItem(`${name}s`));
+    
+            if (localStorageData) {
+                allData = localStorageData;
+            } else {
+                allData = await getAllData(name, maxPage);
+                localStorage.setItem(`${name}s`, JSON.stringify(allData));
+            }
+    
+            setAllReturnedData(allData);
+            setRenderingData(allData.slice(lastPageLoaded * 20, (lastPageLoaded * 20) + 20));
+            setLastPageLoaded(1);
+        } catch (error) {
+            location.href = 'rick-and-morty/error';
         }
-
-        setAllReturnedData(allData);
-        setRenderingData(allData.slice(lastPageLoaded * 20, (lastPageLoaded * 20) + 20));
-        setLastPageLoaded(1);
     };
 
     useEffect(() => {
         firstRendering();
     }, []);
-    
+
     const filteredData = searchedValue.length
     ? allReturnedData.filter(item => {
             item.name = item.name.toLowerCase();
