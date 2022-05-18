@@ -1,20 +1,19 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo, useContext } from 'react';
+
+import AppContext from '../../AppContext';
 
 import './Select.css';
 
-function Select({ funcChange }){
+function Select(){
+    const { handleChangeOption } = useContext(AppContext);
+
     return (
-        <select className="Select" onChange={funcChange}>
+        <select className="Select" onChange={handleChangeOption}>
             <option value="personagens">PERSONAGENS</option>
             <option value="episodios">EPISÓDIOS</option>
             <option value="ambientes">AMBIENTES</option>
         </select>
     );
 }
-
-Select.propTypes = {
-    funcChange: PropTypes.func.isRequired
-};
 
 export default memo(Select);

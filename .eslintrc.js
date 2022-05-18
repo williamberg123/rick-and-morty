@@ -57,6 +57,7 @@ module.exports = {
       'react/jsx-curly-spacing': 'off',
       'no-mixed-spaces-and-tabs': 'off',
       'no-restricted-syntax': 'off',
-      'no-restricted-globals': 'off'
+      'no-restricted-globals': 'off',
+      'object-property-newline': 'off'
   },
 };

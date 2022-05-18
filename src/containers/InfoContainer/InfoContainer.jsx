@@ -1,35 +1,24 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 
 import Select from '../../components/Select/Select';
 import InputSearch from '../../components/InputSearch/InputSearch';
 import LoadingInfo from '../../components/LoadingInfo/LoadingInfo';
+import RenderIf from '../../components/RenderIf/RenderIf';
 
-export default function InfoContainer({ funcChange, funcSearch, dataToShow, totalToLoad, searchedValue = '' }){
+import AppContext from '../../AppContext';
+
+export default function InfoContainer(){
+    const { searchedValue, filteredData } = useContext(AppContext);
+
     return (
         <div className="Container-config">
-            <Select funcChange={funcChange} />
-            <InputSearch
-                funcSearch={funcSearch}
-                searchedValue={searchedValue}
-            />
-            <LoadingInfo
-                total={totalToLoad}
-                loaded={dataToShow.length}
-            />
+            <Select />
+            <InputSearch />
+            <LoadingInfo />
 
-            {(!!searchedValue.length && !dataToShow.length) && (
+            <RenderIf condition={ searchedValue.length && !filteredData.length }>
                 <p>Não há resultados para &quot;{searchedValue}&quot;</p>
-            )}
+            </RenderIf>
         </div>
     );
 }
-
-InfoContainer.propTypes = {
-    funcChange: PropTypes.func.isRequired,
-    funcSearch: PropTypes.func.isRequired,
-    dataToShow: PropTypes.instanceOf(Array).isRequired,
-    totalToLoad: PropTypes.number.isRequired,
-    searchedValue: PropTypes.string
-};

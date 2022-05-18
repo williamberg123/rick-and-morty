@@ -1,25 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import PropTypes from 'prop-types';
+import AppContext from '../../AppContext';
+import generateHTML from '../../utils/generateHTML';
 
-import GenerateHTML from '../../components/GenerateHTML/GenerateHTML';
+export default function DataContainer(){
+    const { filteredData, selectedRenderingOption } = useContext(AppContext);
 
-export default function DataContainer({ dataToShow, optionToRender, searchedValue }){
+    const optionToRender = selectedRenderingOption.name;
+
+    const childrenToRender = generateHTML(optionToRender, filteredData);
+
     return (
         <div className="Container-data">
-            {!!dataToShow.length && (
-                <GenerateHTML
-                    optionToRender={optionToRender}
-                    dataToShow={dataToShow}
-                    searchedValue={searchedValue}
-                />
-            )}
+            {childrenToRender}
         </div>
     );
 }
-
-DataContainer.propTypes = {
-    dataToShow: PropTypes.instanceOf(Array).isRequired,
-    optionToRender: PropTypes.string.isRequired,
-    searchedValue: PropTypes.string
-};

@@ -1,15 +1,17 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
 
-import PropTypes from 'prop-types';
+import AppContext from '../../AppContext';
 
 import './InputSearch.css';
 
-function InputSearch({ funcSearch, searchedValue }){
+function InputSearch(){
+    const { handleSearch, searchedValue } = useContext(AppContext);
+
     return (
         <div className="InputSearch">
             <input
                 id="inputSearch"
-                onChange={funcSearch}
+                onChange={handleSearch}
                 type="search"
                 placeholder="digite aqui para procurar"
                 value={searchedValue}
@@ -17,10 +19,5 @@ function InputSearch({ funcSearch, searchedValue }){
         </div>
     );
 }
-
-InputSearch.propTypes = {
-    funcSearch: PropTypes.func.isRequired,
-    searchedValue: PropTypes.string
-};
 
 export default memo(InputSearch);

@@ -1,24 +1,18 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo, useContext } from 'react';
 
 import { FaPlus } from 'react-icons/fa';
+import AppContext from '../../AppContext';
+
 import './LoadMoreButton.css';
 
-function LoadMoreButton({ funcLoadMore, isDisabled }){
+function LoadMoreButton(){
+    const { isDisabled, loadMore } = useContext(AppContext);
+
     return (
-        <button disabled={isDisabled} type="button" className="LoadMore" onClick={funcLoadMore}>
+        <button disabled={isDisabled} type="button" className="LoadMore" onClick={loadMore}>
             <div>CARREGAR MAIS</div> <FaPlus className="plus-icon" />
         </button>
     );
 }
-
-LoadMoreButton.defaultProps = {
-    isDisabled: false
-};
-
-LoadMoreButton.propTypes = {
-    funcLoadMore: PropTypes.func.isRequired,
-    isDisabled: PropTypes.bool
-};
 
 export default memo(LoadMoreButton);

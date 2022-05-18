@@ -2,94 +2,14 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Character from '../Character/Character';
-import Episode from '../Episode/Episode';
-import Location from '../Location/Location';
+import generateHTML from '../../utils/generateHTML';
 
 export default function GenerateHTML({ optionToRender, dataToShow, searchedValue }){
-    let dataToRender = null;
-
-    switch (optionToRender) {
-        case 'character':
-            dataToRender = dataToShow.map(({id, name, species, image}) => {
-                return searchedValue
-                ? name.includes(searchedValue) && (
-                    <Character
-                        id={id}
-                        name={name}
-                        species={species}
-                        key={id}
-                        imageUrl={image}
-                    />
-                )
-                : (
-                    <Character
-                        id={id}
-                        name={name}
-                        species={species}
-                        key={id}
-                        imageUrl={image}
-                    />
-                );
-            });
-        break;
-
-        case 'episode':
-            dataToRender = dataToShow.map(({id, name, air_date, episode}) => {
-                return searchedValue
-                ? name.includes(searchedValue) && (
-                    <Episode
-                        id={id}
-                        name={name}
-                        air_date={air_date}
-                        key={id}
-                        episode={episode}
-                    />
-                )
-                : (
-                    <Episode
-                        id={id}
-                        name={name}
-                        air_date={air_date}
-                        key={id}
-                        episode={episode}
-                    />
-                );
-            });
-        break;
-
-        case 'location':
-            dataToRender = dataToShow.map(({id, name, type, dimension}) => {
-                return searchedValue
-                ? name.includes(searchedValue) && (
-                    <Location
-                        id={id}
-                        name={name}
-                        type={type}
-                        dimension={dimension}
-                        key={id}
-                    />
-                )
-                : (
-                    <Location
-                        id={id}
-                        name={name}
-                        type={type}
-                        dimension={dimension}
-                        key={id}
-                    />
-                );
-            });
-        break;
-
-        default:
-
-        break;
-    }
-
+    const childrenToRender = generateHTML(optionToRender, dataToShow, searchedValue);
+    
     return (
         <React.Fragment>
-            {dataToRender}
+            {childrenToRender}
         </React.Fragment>
     );
 }
