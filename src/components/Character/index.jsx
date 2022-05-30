@@ -8,7 +8,7 @@ import './style.css';
 
 function Character({ id, name, species, imageUrl }){
     return(
-        <Link to={`/rick-and-morty/personagem/${id}`}>
+        <Link to={`/rick-and-morty/personagem?id=${id}`}>
             <div className="Character" data-testid="CharacterDiv">
                 <Image
                     imageUrl={imageUrl}

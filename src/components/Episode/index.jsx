@@ -11,7 +11,7 @@ function Episode({ id, name, air_date, episode }){
     const episodeSeason = convert(episode);
 
     return (
-        <Link to={`/rick-and-morty/episode/${id}`}>
+        <Link to={`/rick-and-morty/episode?id=${id}`}>
             <div className="Episode">
                 <div className="Episode-name">#{id} - {name}</div>
                 <div className="Episode-episode">{episodeSeason}</div>

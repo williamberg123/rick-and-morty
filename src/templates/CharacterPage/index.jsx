@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Loader from 'react-js-loader';
 
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import CharacterData from '../../components/CharacterData';
 
@@ -13,10 +13,10 @@ import './style.css';
 export default function CharacterPage(){
     const [ characterData, setCharacterData ] = useState({});
 
-    const params = useParams('/rick-and-morty/personagem/:id');
+    const [ searchParams ] = useSearchParams();
     
     const loadCharacterData = async () => {
-        const data = await fetchOne('character', params.id);
+        const data = await fetchOne('character', searchParams.get('id'));
         setCharacterData(data);
     };
 
