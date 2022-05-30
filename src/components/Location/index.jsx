@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import PropTypes from 'prop-types';
 
-import './Location.css';
+import './style.css';
 
 function Location({ name, type, dimension }){
     return (

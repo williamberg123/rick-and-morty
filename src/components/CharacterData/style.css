@@ -1,12 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.CharacterPage {
+.CharacterData {
+    width: 100%;
     position: relative;
     display: flex;
     max-width: 1400px;
@@ -14,13 +7,13 @@
     background-color: black;
 }
 
-.CharacterPage img {
+.CharacterData img {
     width: 50%;
     height: 100vh;
     z-index: 1;
 }
 
-.CharacterPage-data {
+.CharacterInfo {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -33,20 +26,20 @@
     text-align: right;
 }
 
-.CharacterPage-data h1 {
+.CharacterInfo h1 {
     color: red;
     font-size: 2.7rem;
     margin-bottom: 20px;
     font-family: 'Radio Canada', sans-serif;
 }
 
-.CharacterPage-data p {
+.CharacterInfo p {
     font-size: 1.7rem;
     margin: 7px 0;
     font-family: 'Radio Canada', sans-serif;
 }
 
-.CharacterPage-data span {
+.CharacterInfo span {
     color: rgb(116, 116, 116);
 }
 
@@ -58,25 +51,20 @@
     z-index: 2;
 }
 
-.CharacterPage .LoadingDiv {
-    width: 100%;
-    height: 100vh;
-}
-
 @media (max-width: 750px) {
-    .CharacterPage img {
+    .CharacterData img {
         width: 60%;
     }
 
-    .CharacterPage-data {
+    .CharacterInfo {
         padding: 20px;
     }
 
-    .CharacterPage-data h1 {
+    .CharacterInfo h1 {
         font-size: 2rem;
     }
 
-    .CharacterPage-data p {
+    .CharacterInfo p {
         margin: 5px 0;
         font-size: 1.3rem;
     }
@@ -87,15 +75,15 @@
 }
 
 @media (max-width: 550px) {
-    .CharacterPage img {
+    .CharacterData img {
         width: 100%;
     }
 
-    .CharacterPage-data {
+    .CharacterInfo {
         position: absolute;
     }
 
-    .CharacterPage-data span {
+    .CharacterInfo span {
         color: rgb(192, 192, 192);
     }
 
@@ -105,20 +93,20 @@
 }
 
 @media (max-width: 420px) {
-    .CharacterPage {
+    .CharacterData {
         flex-direction: column;
     }
 
-    .CharacterPage img {
+    .CharacterData img {
         height: 100%;
     }
 
-    .CharacterPage-data {
+    .CharacterInfo {
         position: static;
         height: fit-content;
     }
 
-    .CharacterPage-data span {
+    .CharacterInfo span {
         color: rgb(116, 116, 116);
     }
 }

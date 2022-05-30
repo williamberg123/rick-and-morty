@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import convert from '../../utils/convertEpisode';
 
-import './Episode.css';
+import './style.css';
 
 function Episode({ id, name, air_date, episode }){
     const episodeSeason = convert(episode);

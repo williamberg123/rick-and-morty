@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 
-import LoadingDiv from '../../components/LoadingDiv/LoadingDiv';
+import Loader from 'react-js-loader';
+
+import { useParams } from 'react-router-dom';
 
 import fetchOne from '../../utils/fetchOne';
 import convert from '../../utils/convertEpisode';
-import GenerateHTML from '../../components/GenerateHTML/GenerateHTML';
+import GenerateHTML from '../../components/GenerateHTML';
 
-import './EpisodePage.css';
+import './style.css';
 
 export default function EpisodePage(){
     const [ episodeData, setEpisodeData ] = useState({});
@@ -43,14 +44,27 @@ export default function EpisodePage(){
         <div className="EpisodePage">
             {
             !Object.keys(episodeData).length
-                ? <LoadingDiv />
+                ? (
+                    <Loader
+                        type="spinner-default"
+                        bgColor="#FFFFFF"
+                        size={70}
+                    />
+                )
                 : (
                     <div className="EpisodePage-data">
                         <h1>#{id} {name.toUpperCase()}</h1>
                         {convert(episode)}
                         <p>Exibido a primeira vez em: <span>{air_date}</span></p>
                         <h2>PERSONAGENS PRESENTES NESTE EPISÓDIO</h2>
-                        {!charactersData.length && (<LoadingDiv />)}
+                        {!charactersData.length && (
+                            <Loader
+                                type="spinner-default"
+                                bgColor="#FFFFFF"
+                                size={70}
+                            />
+                        )
+                        }
                         <div className="EpisodePage-characters">
                             {
                             !!charactersData.length && (

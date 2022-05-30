@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Character from './Character';
+import Character from './index';
 
 describe('<Character />', () => {
     it('should render him elements correctly', () => {

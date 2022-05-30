@@ -48,17 +48,8 @@ export default function App(){
     }, []);
 
     const loadAppData = useCallback(async (name, maxPage) => {
-        let allData = null;
-
         try {
-            const localStorageData = JSON.parse(localStorage.getItem(`${name}s`));
-    
-            if (localStorageData) {
-                allData = localStorageData;
-            } else {
-                allData = await getAllData(name, maxPage);
-                localStorage.setItem(`${name}s`, JSON.stringify(allData));
-            }
+            const allData = await getAllData(name, maxPage);
     
             setAllReturnedData(allData);
             setRenderingData(allData.slice(lastPageLoaded * 20, (lastPageLoaded * 20) + 20));
@@ -76,7 +67,7 @@ export default function App(){
     const filteredData = searchedValue.length
         ? allReturnedData.filter(item => {
             item.name = item.name.toLowerCase();
-            return item.name.indexOf(searchedValue) !== -1;
+            return item.name.includes(searchedValue);
         })
         : renderingData;
 

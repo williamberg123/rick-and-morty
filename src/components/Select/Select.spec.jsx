@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render, fireEvent } from '@testing-library/react';
-import Select from './Select';
+import Select from './index';
 
 describe('<Select />', () => {
     it('should render select with options', () => {

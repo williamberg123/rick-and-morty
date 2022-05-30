@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import LoadingInfo from './LoadingInfo';
+import LoadingInfo from './index';
 
 describe('<LoadingInfo />', () => {
     it('should render informations correctly', () => {

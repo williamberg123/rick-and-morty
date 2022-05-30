@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Image from '../Image/Image';
+import Image from '../Image';
 
-import './Character.css';
+import './style.css';
 
 function Character({ id, name, species, imageUrl }){
     return(

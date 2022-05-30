@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import './Header.css';
+import './style.css';
 
 function Header() {    
     return (

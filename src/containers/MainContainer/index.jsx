@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Container.css';
+import './style.css';
 
 export default function Container({ children }){
     return (

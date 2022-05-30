@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import Select from '../../components/Select/Select';
-import InputSearch from '../../components/InputSearch/InputSearch';
-import LoadingInfo from '../../components/LoadingInfo/LoadingInfo';
-import RenderIf from '../../components/RenderIf/RenderIf';
+import Select from '../../components/Select';
+import InputSearch from '../../components/InputSearch';
+import LoadingInfo from '../../components/LoadingInfo';
+import RenderIf from '../../components/RenderIf';
 
 import AppContext from '../../AppContext';
 

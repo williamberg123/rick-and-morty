@@ -58,6 +58,7 @@ module.exports = {
       'no-mixed-spaces-and-tabs': 'off',
       'no-restricted-syntax': 'off',
       'no-restricted-globals': 'off',
-      'object-property-newline': 'off'
+      'object-property-newline': 'off',
+      'react/react-in-jsx-scope': 'off'
   },
 };

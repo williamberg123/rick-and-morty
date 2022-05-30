@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import AppContext from '../../AppContext';
 
-import './LoadingInfo.css';
+import './style.css';
 
 export default function LoadingInfo(){
     const { allReturnedData, filteredData } = useContext(AppContext);

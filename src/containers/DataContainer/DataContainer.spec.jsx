@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import DataContainer from './DataContainer';
+import DataContainer from './index';
 
 import { characterMock } from '../../mocks/characterMock';
 

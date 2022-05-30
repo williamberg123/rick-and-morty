@@ -2,7 +2,7 @@ import React, { memo, useContext } from 'react';
 
 import AppContext from '../../AppContext';
 
-import './Select.css';
+import './style.css';
 
 function Select(){
     const { handleChangeOption } = useContext(AppContext);

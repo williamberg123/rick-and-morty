@@ -3,7 +3,7 @@ import React, { memo, useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import AppContext from '../../AppContext';
 
-import './LoadMoreButton.css';
+import './style.css';
 
 function LoadMoreButton(){
     const { isDisabled, loadMore } = useContext(AppContext);

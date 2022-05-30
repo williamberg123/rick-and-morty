@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import InfoContainer from './InfoContainer';
+import InfoContainer from './index';
 
 describe('<InfoContainer />', () => {
     it('should render correctly', () => {

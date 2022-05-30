@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Location from './Location';
+import Location from './index';
 
 describe('<Location />', () => {
     it('should render corretcly', () => {

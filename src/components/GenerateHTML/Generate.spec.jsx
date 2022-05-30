@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import GenerateHTML from './GenerateHTML';
+import GenerateHTML from './index';
 
 import { characterMock } from '../../mocks/characterMock';
 import { locationsMock } from '../../mocks/locationsMock';

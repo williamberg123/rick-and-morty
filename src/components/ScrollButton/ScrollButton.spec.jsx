@@ -1,7 +1,6 @@
 import React from 'react';
-import { screen, render, fireEvent } from '@testing-library/react';
-import ScrollButton from './ScrollButton';
-import userEvent from '@testing-library/user-event';
+import { screen, render } from '@testing-library/react';
+import ScrollButton from './index';
 
 describe('<ScrollButton />', () => {
     it('should render button correctly', () => {

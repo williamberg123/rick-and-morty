@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Character from '../components/Character/Character';
-import Episode from '../components/Episode/Episode';
-import Location from '../components/Location/Location';
+import Character from '../components/Character';
+import Episode from '../components/Episode';
+import Location from '../components/Location';
 
 const generateHTML = (optionToRender, dataToShow) => {
     let dataToRender = null;

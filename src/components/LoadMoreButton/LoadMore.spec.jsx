@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render, fireEvent } from '@testing-library/react';
-import LoadMoreButton from './LoadMoreButton';
+import LoadMoreButton from './index';
 
 describe('<LoadMoreButton />', () => {
     it('should call function when is clicked', () => {

@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
-import './ScrollButton.css';
+import './style.css';
 
 function ScrollButton({ direction }){
     const scrollPageToUp = () => window.scrollTo(0, 0);

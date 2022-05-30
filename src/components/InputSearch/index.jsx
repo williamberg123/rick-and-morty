@@ -2,7 +2,7 @@ import React, { memo, useContext } from 'react';
 
 import AppContext from '../../AppContext';
 
-import './InputSearch.css';
+import './style.css';
 
 function InputSearch(){
     const { handleSearch, searchedValue } = useContext(AppContext);

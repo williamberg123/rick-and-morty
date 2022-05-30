@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Episode from './Episode';
+import Episode from './index';
 
 import { episodeMock } from '../../mocks/episodeMock';
 

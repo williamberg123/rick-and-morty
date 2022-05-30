@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 
-import Header from '../../components/Header/Header';
-import Container from '../../containers/MainContainer/Container';
-import InfoContainer from '../../containers/InfoContainer/InfoContainer';
-import DataContainer from '../../containers/DataContainer/DataContainer';
-import LoadMoreButton from '../../components/LoadMoreButton/LoadMoreButton';
-import ScrollButton from '../../components/ScrollButton/ScrollButton';
-import RenderIf from '../../components/RenderIf/RenderIf';
-import LoadingDiv from '../../components/LoadingDiv/LoadingDiv';
+import Loader from 'react-js-loader';
+
+import Header from '../../components/Header';
+import Container from '../../containers/MainContainer';
+import InfoContainer from '../../containers/InfoContainer';
+import DataContainer from '../../containers/DataContainer';
+import LoadMoreButton from '../../components/LoadMoreButton';
+import ScrollButton from '../../components/ScrollButton';
+import RenderIf from '../../components/RenderIf';
 
 import AppContext from '../../AppContext';
 
-import './Home.css';
+import './style.css';
 
 export default function Home() {
     const {
@@ -32,9 +33,7 @@ export default function Home() {
             </Container>
 
             <RenderIf condition={ !allReturnedData.length }>
-                <div>
-                    <LoadingDiv />
-                </div>
+                <Loader type="spinner-default" bgColor="#000000" size={70} />
             </RenderIf>
 
             <RenderIf condition={ !searchedValue && allReturnedData.length }>
